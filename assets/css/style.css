@@ -464,7 +464,7 @@ h3{
         margin: 1rem;
     }
     .avatar-picture, input, label{
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
     .avatar-picture img{
         width: 8rem;
@@ -482,7 +482,7 @@ h3{
     button{
         font-size: 2rem;
     }
- 
+    
     .ticketArea h1{
         position: fixed;
         font-size: 6rem;
@@ -490,6 +490,7 @@ h3{
         text-align: center;
         color: var(--Neutral300);
         top: 5rem;
+    
     }
     .nameArea{
         background: var(--Gradient-text);
