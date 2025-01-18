@@ -1,0 +1,7 @@
+# Design files (please do not remove 🙂)
+*.sketch
+*.fig
+*.xd
+design
+*.json
+script.ts
