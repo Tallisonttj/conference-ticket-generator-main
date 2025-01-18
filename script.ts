@@ -41,8 +41,10 @@ function getavatar(event:any) {
         
         }
         else{
+
         const fileURL = URL.createObjectURL(file);
         image.src = fileURL;
+        image.onload = () => URL.revokeObjectURL(fileURL);
         inc.src = fileURL
         h3.style.display = 'none';
         h6.innerHTML = 'Upload your photo (JPG or PNG, max size: 500KB)'
