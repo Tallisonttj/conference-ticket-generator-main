@@ -22,21 +22,20 @@
 }
 body{
     background-image: url('../images/background-mobile.png');
-    height: 100vh;
-    background-size: cover;
+    background-size:cover;
     background-position: bottom;
     background-repeat: no-repeat;
     color: var(--Neutral300);
 }
 .line{
-    position: fixed;
-    width: 100vh;
-    top: 0;
+    position: absolute;
+    width: 30rem;
     left: 50%;
     transform: translate(-50%);
+    z-index: -10;
 }
 .logoFull{
-    position: fixed;
+    position: relative;
     top: 2rem;
     width: 15rem;
     left: 50%;
@@ -54,9 +53,10 @@ body{
     top: 0rem;
 }
 .lineBottom{
+    display: flex;
     position: fixed;
     width: 10rem;
-    bottom:0
+    bottom:0;
 }
 .lineTop{
     position: fixed;
@@ -64,15 +64,20 @@ body{
     top: 2rem;
     right: 0;
 }
+.container{
+    display: relative;
+    max-width: 60rem;
+}
+    
 form{
-    position: fixed;
     display: flex;
     flex-direction: column;
     color: var(--Neutral0);
     gap: 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-top: 4rem;
     padding: 1.5rem;
+    
 }
 .title{
     margin-bottom: 1rem;
@@ -83,14 +88,17 @@ form{
 }
 .title h1{
     font-size: 3rem;
+    
   
 }
 .title h2{
     color: var(--Neutral500);
     font-size: 2rem;
+    
 }
 label{
-    font-size: 2rem;
+    font-size: 1.5rem;
+    
 }
 #avatar{
     display: none;
@@ -107,7 +115,7 @@ label{
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     gap: 1rem;
     padding: 1rem;
     margin: 1rem 0;
@@ -187,12 +195,13 @@ h3{
 
 /* Ticket area */
 .ticketArea{
-    position: fixed;
+    position: absolute;
+    top: 5rem;
     display: none;
     flex-direction: column;
+    
 }
 .ticketArea h1{
-    position: fixed;
     font-size: 3rem;
     padding: 2rem;
     text-align: center;
@@ -207,7 +216,7 @@ h3{
     text-transform: capitalize;
 }
 .ticketArea p {
-    position: fixed;
+    
     font-size: 1.8rem;
     padding: 3rem;
     text-align: center;
@@ -220,20 +229,16 @@ h3{
 }
 
 .ticket{
+    position: relative;
     margin: auto;
-    top: 40rem;
-    left: 50%;
-    transform: translate(-50%,-50% );
-    position: fixed;
     background-image: url('../images/pattern-ticket.svg');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    width: 35rem;
-    height: 17rem;
+    width: 30rem;
+    height: 15rem;
 }
 .iconet p{
-    position: fixed;
     display: flex;
     font-weight: bold;
     color: var(--Neutral0);
@@ -245,16 +250,16 @@ h3{
 }
 .iconet img{
     width: 3rem;
+
 }
 .ticket h2{
-    position: fixed;
     top: 5rem;
     font-size: 1.2rem;
     margin-left: 4rem;
     font-weight: 300;
 }
 .ticketinfoArea{
-    position: fixed;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -263,34 +268,39 @@ h3{
     padding: 0 1.5rem;
 }
 .ticketinfoArea img{
+    position: absolute;
     width: 6rem;
     height: 6rem;
-    left: 30rem;
+    left: 2rem;
+    bottom: 2rem;
     
 }
 .tckname{
+    position: relative;
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: 0;
+    justify-content: center;
+    margin: 2rem 0;
 }
 .tckname h1{
-    position: fixed;
     top: 8rem;
     font-size: 1.5rem;
     padding: 0;
 }
-.tckname img{
+.tckname p .icon-git{
+    position: absolute;
     width: 1.5rem;
+    left: -0.2rem;
+    top: -0.5rem;
+    
 }
 .tckname p{
-    position: fixed;
-    top: 9rem;
+    top: 0;
     display: flex;
-    align-items: center;
-    font-size: 1.5rem;
+    gap: 2rem;
+    font-size: 1rem;
     padding: 0;
-    margin: -1rem 0;
 }
 .tckname h1 span{
     font-size: 1.7rem;
@@ -299,32 +309,31 @@ h3{
 }
 .tckname p span{
     font-size: 1.3rem;
+    margin-left: 1.1rem;
 }
 
 @media ( width > 767px )and (width < 956px){
     body{
-        background-image: url('../images/background-tablet.png');
-        height: 100vh;
+    background-image: url('../images/background-tablet.png');
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
-
     }
-    form {
-        width: 50rem;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    .line{
+        width: 50rem;}
+    .container{
+        margin: auto;
     }
     .logoFull{
-        width: 25rem;
+        width: 20rem;
     }
     .lineTop{
         width: 20rem;
     }
     .lineBottom{
-        width: 50rem;
-        left: 0rem;
+        width: 30rem;
+        left: 0;
+        bottom: 0;
     }
     .title h1 {
         font-size: 3.5rem;
@@ -352,102 +361,63 @@ h3{
     button{
         font-size: 2rem;
     }
-   
-    .ticketArea h1{
-        position: fixed;
-        font-size: 6rem;
-        padding: 2rem;
-        text-align: center;
-        color: var(--Neutral300);
-        top: 5rem;
+    .ticketArea{
+        max-width: 60rem;
     }
-    .nameArea{
-        background: var(--Gradient-text);
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 6rem;
-        text-transform: capitalize;
-    }
-    .ticketArea p {
-        position: fixed;
-        font-size: 3rem;
-        padding: 7rem;
-        text-align: center;
-        color: var(--Neutral300);
-        top: 17rem;
-    }
-    #emailArea{
-        color: var(--Orange500);
-        font-size: 3rem;
-    }
-    
-    .ticket{
-        top: 55rem;
-        width: 60rem;
-        height: 30rem;
-    }
-    .iconet p{
-        top: 0;
-        font-size: 3rem;
-        padding: 3rem;
-    }
-    .iconet img{
-        width: 4rem;
-    }
-    .ticket h2{
-        top: 10rem;
-        font-size: 2rem;
-        left: 4rem;
-    }
-    .ticketinfoArea{
-        top: 18rem;
-    }
+  
     .ticketinfoArea img{
-        top: 12rem;
-        width: 10rem;
-        height: 10rem;
-        margin: 0
+        width: 6rem;
+        height: 6rem;
+        left: 2rem;
+        bottom: 2rem;
         
     }
-
-    .tckname h1{
-        top: 14rem;
-        left: 10rem;
+    .iconet{
+        margin-top: 1rem;
     }
-    .tckname img{
-        width: 3rem;
+    .tckname{
+        margin: 0;
+        top: 6rem;
+        left: -6rem;
     }
     .tckname p{
-        top: 12rem;
-        font-size: 4rem;
-        left: 5rem;
+        top: 0;
+        display: flex;
+        gap: 2rem;
+        font-size: 1rem;
+        padding: 0;
     }
     .tckname h1 span{
-        font-size: 3rem;
+        font-size: 1.7rem;
+        font-weight: bold;
+        color: var(--Neutral0);
     }
     .tckname p span{
-        font-size: 2.5rem;
+        font-size: 1.3rem;
+        margin-left: 1.1rem;
     }
+    .ticket{
+        width: 40rem;
+        height: 20rem;
+    }
+
     
 }
 @media ( width > 957px ){
     body{
-        background-image: url('../images/background-desktop.png');
-        height: 100vh;
+    background-image: url('../images/background-desktop.png');
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
 
     }
-
-    form {
-        width: 50rem;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    .line{
+        width: 90rem;}
+    .container{
+        margin: auto;
     }
     .logoFull{
-        width: 25rem;
+        width: 20rem;
     }
     .lineTop{
         width: 20rem;
@@ -483,81 +453,46 @@ h3{
         font-size: 2rem;
     }
     
-    .ticketArea h1{
-        position: fixed;
-        font-size: 6rem;
-        padding: 2rem;
-        text-align: center;
-        color: var(--Neutral300);
-        top: 5rem;
-    
+    .ticketArea{
+        max-width: 60rem;
+        margin-top: 3rem;
     }
-    .nameArea{
-        background: var(--Gradient-text);
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 6rem;
-        text-transform: capitalize;
-    }
-    .ticketArea p {
-        position: fixed;
-        font-size: 3rem;
-        padding: 7rem;
-        text-align: center;
-        color: var(--Neutral300);
-        top: 17rem;
-    }
-    #emailArea{
-        color: var(--Orange500);
-        font-size: 3rem;
-    }
-    
-    .ticket{
-        top: 50rem;
-        width: 60rem;
-        height: 30rem;
-    }
-    .iconet p{
-        top: 0;
-        font-size: 3rem;
-        padding: 3rem;
-    }
-    .iconet img{
-        width: 4rem;
-    }
-    .ticket h2{
-        top: 8rem;
-        font-size: 2rem;
-        left: 4rem;
-    }
-    .ticketinfoArea{
-        top: 18rem;
-    }
+  
     .ticketinfoArea img{
-        top: 12rem;
-        width: 10rem;
-        height: 10rem;
-        margin: 0
+        width: 6rem;
+        height: 6rem;
+        left: 2rem;
+        bottom: 2rem;
         
     }
-
-    .tckname h1{
-        top: 14rem;
-        left: 10rem;
+    .iconet{
+        margin-top: 1rem;
     }
-    .tckname img{
-        width: 3rem;
+    .tckname{
+        margin: 0;
+        top: 6rem;
+        left: -6rem;
     }
     .tckname p{
-        top: 12rem;
-        font-size: 4rem;
-        left: 5rem;
+        top: 0;
+        display: flex;
+        gap: 2rem;
+        font-size: 1rem;
+        padding: 0;
     }
     .tckname h1 span{
-        font-size: 3rem;
+        font-size: 1.7rem;
+        font-weight: bold;
+        color: var(--Neutral0);
     }
     .tckname p span{
-        font-size: 2.5rem;
+        font-size: 1.3rem;
+        margin-left: 1.1rem;
     }
+    .ticket{
+        width: 40rem;
+        height: 20rem;
+    }
+
     
 }
